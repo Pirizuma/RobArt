@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply text-stone-900 antialiased;
+  background: linear-gradient(
+    168deg,
+    #fafaf9 0%,
+    #fcfcfb 35%,
+    #fafafa 65%,
+    #f8f8f7 100%
+  );
+  min-height: 100vh;
+}

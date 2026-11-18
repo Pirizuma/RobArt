@@ -1,0 +1,233 @@
+import type { Project } from "./types";
+
+export const projects: Project[] = [
+  {
+    id: "womb",
+    title: "Womb",
+    year: 2019,
+    materials: ["Ceramic", "Oxide Glaze"],
+    description:
+      "An enclosed, organic form that suggests interiority and origin. The surface is worked to retain the marks of making — pressed, hollowed, smoothed — so that the process of shaping remains legible within the finished piece.",
+    thumbnailImage: "/images/Womb/Womb_1.jpg",
+    images: [
+      "/images/Womb/Womb_1.jpg",
+      "/images/Womb/Womb_2.JPG",
+      "/images/Womb/Womb_3.JPG",
+      "/images/Womb/Womb_4.JPG",
+      "/images/Womb/Womb_5.JPG",
+      "/images/Womb/Womb_6.JPG",
+      "/images/Womb/Womb_7.JPG",
+      "/images/Womb/Womb_8.JPG",
+      "/images/Womb/Womb_9.JPG",
+    ],
+  },
+  {
+    id: "white-chiave",
+    title: "White Chiave",
+    year: 2020,
+    materials: ["Plaster", "Pigment"],
+    description:
+      "Chiave — key, in Italian — rendered white and monumental. The form hovers between utility and symbol: a key that opens nothing visible, and perhaps everything unseen. Surface texture catches light differently at each angle, giving the piece a restless, shifting presence.",
+    thumbnailImage: "/images/White-Chiave/Chiave_1.JPG",
+    images: [
+      "/images/White-Chiave/Chiave_1.JPG",
+      "/images/White-Chiave/Chiave_2.JPG",
+      "/images/White-Chiave/Chiave_3.JPG",
+      "/images/White-Chiave/Chiave_4.JPG",
+      "/images/White-Chiave/Chiave_5.JPG",
+      "/images/White-Chiave/Chiave_6.JPG",
+      "/images/White-Chiave/Chiave_7.JPG",
+      "/images/White-Chiave/Chiave_8.JPG",
+      "/images/White-Chiave/Chiave_9.JPG",
+      "/images/White-Chiave/Chiave_10.JPG",
+      "/images/White-Chiave/Chiave_11.JPG",
+      "/images/White-Chiave/Chiave_12.JPG",
+      "/images/White-Chiave/Chiave_13.JPG",
+      "/images/White-Chiave/Chiave_14.JPG",
+    ],
+  },
+  {
+    id: "shark",
+    title: "Shark",
+    year: 2016,
+    materials: ["Mixed Media"],
+    description:
+      "The shark form — ancient, efficient, unnerving — rendered in still material. Movement frozen mid-glide, the predator becomes an object of contemplation rather than fear.",
+    thumbnailImage: "/images/Shark.JPG",
+    images: ["/images/Shark.JPG"],
+  },
+  {
+    id: "mirror",
+    title: "Mirror",
+    year: 2017,
+    materials: ["Mixed Media"],
+    description:
+      "A piece that turns reflection back on the viewer. The work destabilises the mirror's promise of accuracy — what is returned is not quite recognition, not quite stranger.",
+    thumbnailImage: "/images/Mirror/Mirror_1.JPG",
+    images: [
+      "/images/Mirror/Mirror_1.JPG",
+      "/images/Mirror/Mirror_2.JPG",
+      "/images/Mirror/Mirror_3.JPG",
+      "/images/Mirror/Mirror_4.JPG",
+      "/images/Mirror/Mirror_5.JPG",
+    ],
+  },
+  {
+    id: "chair-jacket",
+    title: "Chair Jacket",
+    year: 2018,
+    materials: ["Found Chair", "Textile", "Mixed Media"],
+    description:
+      "A found chair dressed — or armoured — in a jacket. The work collapses the boundary between the body that sits and the object that holds it. Who inhabits whom? The jacket implies an absent person; the chair, an absent use.",
+    thumbnailImage: "/images/Chair-Jacket/Chair-Jacket_1.JPG",
+    images: [
+      "/images/Chair-Jacket/Chair-Jacket_1.JPG",
+      "/images/Chair-Jacket/Chair-Jacket_2.JPG",
+      "/images/Chair-Jacket/Chair-Jacket_3.JPG",
+      "/images/Chair-Jacket/Chair-Jacket_4.JPG",
+      "/images/Chair-Jacket/Chair-Jacket_5.JPG",
+      "/images/Chair-Jacket/Chair-Jacket_6.JPG",
+    ],
+  },
+  {
+    id: "fountain",
+    title: "Fountain",
+    year: 2015,
+    materials: ["Stone", "Mixed Media"],
+    description:
+      "Water as metaphor and mechanism. This piece reworks the classical fountain form — public, civic, generous — as a more private and ambiguous object.",
+    thumbnailImage: "/images/Fountain.JPG",
+    images: ["/images/Fountain.JPG"],
+  },
+  {
+    id: "octo",
+    title: "Octo",
+    year: 2023,
+    materials: ["Bronze", "Mixed Media"],
+    description:
+      "A study in tentacular form — eight limbs radiating outward, each one a conversation between weight and reach. The work draws on the octopus as a symbol of intelligence distributed through the body rather than concentrated in a single centre.",
+    thumbnailImage: "/images/Octo/Octo_1.JPG",
+    images: [
+      "/images/Octo/Octo_1.JPG",
+      "/images/Octo/Octo_2.JPG",
+      "/images/Octo/Octo_3.JPG",
+      "/images/Octo/Octo_4.JPG",
+      "/images/Octo/Octo_5.JPG",
+      "/images/Octo/Octo_6.JPG",
+      "/images/Octo/Octo_7.JPG",
+      "/images/Octo/Octo_8.JPG",
+      "/images/Octo/Octo_9.JPG",
+      "/images/Octo/Octo_10.JPG",
+    ],
+  },
+  {
+    id: "sardine",
+    title: "Sardine",
+    year: 2022,
+    materials: ["Cast Resin", "Pigment"],
+    description:
+      "An extended meditation on repetition and the individual within the collective. Each sardine form is cast separately, identical in origin yet distinct in surface. Together they suggest the compression of bodies in motion — a school, a crowd, a memory.",
+    thumbnailImage: "/images/Sardine/Sardine_1.JPG",
+    images: [
+      "/images/Sardine/Sardine_1.JPG",
+      "/images/Sardine/Sardine_2.JPG",
+      "/images/Sardine/Sardine_3.JPG",
+      "/images/Sardine/Sardine_4.JPG",
+      "/images/Sardine/Sardine_5.JPG",
+      "/images/Sardine/Sardine_6.JPG",
+      "/images/Sardine/Sardine_7.JPG",
+      "/images/Sardine/Sardine_8.JPG",
+      "/images/Sardine/Sardine_9.JPG",
+      "/images/Sardine/Sardine_10.JPG",
+      "/images/Sardine/Sardine_11.JPG",
+      "/images/Sardine/Sardine_12.JPG",
+      "/images/Sardine/Sardine_13.JPG",
+      "/images/Sardine/Sardine_14.JPG",
+      "/images/Sardine/Sardine_15.JPG",
+      "/images/Sardine/Sardine_16.JPG",
+      "/images/Sardine/Sardine_17.JPG",
+      "/images/Sardine/Sardine_18.JPG",
+      "/images/Sardine/Sardine_19.JPG",
+      "/images/Sardine/Sardine_20.JPG",
+      "/images/Sardine/Sardine_21.JPG",
+      "/images/Sardine/Sardine_22.JPG",
+      "/images/Sardine/Sardine_23.JPG",
+      "/images/Sardine/Sardine_24.JPG",
+    ],
+  },
+  {
+    id: "sun-chair",
+    title: "Sun Chair",
+    year: 2021,
+    materials: ["Mixed Media"],
+    description:
+      "The chair as threshold — a seat angled toward warmth, toward light. This piece plays with the familiar object of rest and reframes it as aspiration, orienting the body outward rather than inward.",
+    thumbnailImage: "/images/Sun-Chair/Sun-Chair_1.JPG",
+    images: [
+      "/images/Sun-Chair/Sun-Chair_1.JPG",
+      "/images/Sun-Chair/Sun-Chair_2.JPG",
+      "/images/Sun-Chair/Sun-Chair_3.JPG",
+      "/images/Sun-Chair/Sun-Chair_4.JPG",
+      "/images/Sun-Chair/Sun-Chair_5.JPG",
+      "/images/Sun-Chair/Sun-Chair_6.JPG",
+      "/images/Sun-Chair/Sun-Chair_7.JPG",
+      "/images/Sun-Chair/Sun-Chair_8.JPG",
+      "/images/Sun-Chair/Sun-Chair_9.JPG",
+      "/images/Sun-Chair/Sun-Chair_10.JPG",
+      "/images/Sun-Chair/Sun-Chair_11.JPG",
+      "/images/Sun-Chair/Sun-Chair_12.JPG",
+      "/images/Sun-Chair/Sun-Chair_13.JPG",
+      "/images/Sun-Chair/Sun-Chair_14.JPG",
+      "/images/Sun-Chair/Sun-Chair_15.JPG",
+      "/images/Sun-Chair/Sun-Chair_16.JPG",
+    ],
+  },
+  {
+    id: "human",
+    title: "Human",
+    year: 2014,
+    materials: ["Mixed Media"],
+    description:
+      "A figure pared back to its essential gesture. Not portrait, not ideal — something in between that resists resolution and invites projection.",
+    thumbnailImage: "/images/Human.JPG",
+    images: ["/images/Human.JPG"],
+  },
+  {
+    id: "king-tut",
+    title: "King Tut",
+    year: 2013,
+    materials: ["Mixed Media"],
+    description:
+      "A response to one of history's most iconic faces — the golden mask that made a boy-king into myth. This piece asks what happens when that image is remade by hand, in different material, at a different moment in time.",
+    thumbnailImage: "/images/King-Tut.jpg",
+    images: ["/images/King-Tut.jpg"],
+  },
+  {
+    id: "newspaper",
+    title: "Newspaper",
+    year: 2012,
+    materials: ["Mixed Media", "Found Material"],
+    description:
+      "The daily paper — carrier of record, of opinion, of ephemera — given a permanence it was never designed to hold. The work preserves the disposable.",
+    thumbnailImage: "/images/Newspaper.JPG",
+    images: ["/images/Newspaper.JPG"],
+  },
+  {
+    id: "guiness",
+    title: "Guinness",
+    year: 2011,
+    materials: ["Mixed Media"],
+    description:
+      "The pint as cultural artefact. A familiar form elevated through material transformation — the everyday object studied long enough to become something else entirely.",
+    thumbnailImage: "/images/Guiness.JPG",
+    images: ["/images/Guiness.JPG"],
+  },
+];
+
+export function getProjectById(id: string): Project | undefined {
+  return projects.find((p) => p.id === id);
+}
+
+export function getAllProjectIds(): string[] {
+  return projects.map((p) => p.id);
+}

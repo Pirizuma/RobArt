@@ -73,7 +73,9 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    // Column flex: the message box grows to fill any spare height, so the
+    // form tile ends level with the tile beside it.
+    <form onSubmit={handleSubmit} className="flex flex-1 flex-col gap-4">
       <input type="hidden" name="_subject" value="New enquiry from the RobArt Studio website" />
       {/* Honeypot: hidden from people, filled in by bots — Formspree discards those. */}
       <input
@@ -113,7 +115,7 @@ export function ContactForm() {
         />
       </div>
 
-      <div>
+      <div className="flex flex-1 flex-col">
         <label htmlFor="message" className={labelClass}>
           Message
         </label>
@@ -122,7 +124,7 @@ export function ContactForm() {
           name="message"
           rows={4}
           required
-          className={`${fieldClass} resize-y`}
+          className={`${fieldClass} min-h-28 flex-1 resize-none`}
         />
       </div>
 
@@ -132,7 +134,7 @@ export function ContactForm() {
         </p>
       )}
 
-      <LiquidGlassButton type="submit" disabled={status === "sending"}>
+      <LiquidGlassButton type="submit" disabled={status === "sending"} className="self-start">
         {status === "sending" ? "Sending…" : "Send message"}
       </LiquidGlassButton>
     </form>

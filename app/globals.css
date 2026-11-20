@@ -34,12 +34,16 @@ body {
 
 /* No widows: avoid a single word stranded on the last line of paragraphs,
    and keep headings evenly balanced. Browsers without support just wrap
-   normally. */
-p,
-dd,
-li,
-figcaption {
-  text-wrap: pretty;
+   normally. Paragraphs only from 640px up — on narrow phones "pretty"
+   noticeably shortens lines; there, noWidow() (lib/text.ts) and
+   non-breaking spaces keep the last two words together instead. */
+@media (min-width: 640px) {
+  p,
+  dd,
+  li,
+  figcaption {
+    text-wrap: pretty;
+  }
 }
 h1,
 h2,

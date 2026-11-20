@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { HeroMeshGradient } from "@/components/HeroMeshGradient";
 import { exhibitionMode, openGraphBase } from "@/lib/site";
 import { profile } from "@/lib/profile";
-import { noWidow } from "@/lib/text";
+import { BioText } from "@/components/BioText";
 
 const contactDescription =
   "Get in touch with Robert Mariotti about commissions, enquiries and collaborations. Based in Darwin, NT — taking commissions across Australia and overseas.";
@@ -66,16 +66,12 @@ export default function InformationPage() {
       {/* Row 1 — contact details + contact form (leads) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
         {/* Details + blurb */}
-        <div className="border border-stone-200 rounded-3xl p-[clamp(2rem,3.5vw,2.5rem)]">
+        <div className="border border-stone-200 rounded-3xl p-[clamp(1.5rem,3.5vw,2.5rem)]">
           <h2 className="text-xl font-medium text-stone-900 tracking-tight">
             {profile.name}
           </h2>
           <p className="mt-1 text-sm text-stone-500">{profile.headline}</p>
-          <div className="mt-4 space-y-3 text-stone-600 leading-relaxed text-sm sm:text-base">
-            {profile.about.map((para) => (
-              <p key={para.slice(0, 24)}>{noWidow(para)}</p>
-            ))}
-          </div>
+          <BioText paragraphs={profile.about} />
 
           <dl className="mt-8 space-y-5">
             {detailItems.map((item) => (
@@ -101,16 +97,16 @@ export default function InformationPage() {
         </div>
 
         {/* Contact form — over the same warm MeshGradient as the hero */}
-        <div className="relative overflow-hidden border border-stone-200 rounded-3xl p-[clamp(2rem,3.5vw,2.5rem)]">
+        <div className="relative flex flex-col overflow-hidden border border-stone-200 rounded-3xl p-[clamp(1.5rem,3.5vw,2.5rem)]">
           <div aria-hidden className="absolute inset-0">
             <HeroMeshGradient />
           </div>
 
-          <div className="relative z-10">
+          <div className="relative z-10 flex flex-1 flex-col">
             <h2 className="text-xl font-medium text-stone-900 tracking-tight">
               Send a message
             </h2>
-            <div className="mt-6">
+            <div className="mt-6 flex flex-1 flex-col">
               <ContactForm />
             </div>
           </div>
@@ -120,7 +116,7 @@ export default function InformationPage() {
       {/* Row 2 — image placeholder + companies/initiatives worked with */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
         <PhotoTile />
-        <div className="border border-stone-200 rounded-3xl p-[clamp(2rem,3.5vw,2.5rem)]">
+        <div className="border border-stone-200 rounded-3xl p-[clamp(1.5rem,3.5vw,2.5rem)]">
           <p className="text-stone-600 leading-relaxed text-sm sm:text-base">
             Robert has worked with:
           </p>

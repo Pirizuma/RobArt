@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
 import { HeroMeshGradient } from "@/components/HeroMeshGradient";
 import { openGraphBase } from "@/lib/site";
+import { profile } from "@/lib/profile";
 
 const contactDescription =
-  "Get in touch with Robert Mariotti about commissions, enquiries and collaborations. Based in Darwin, NT — working Australia-wide.";
+  "Get in touch with Robert Mariotti about commissions, enquiries and collaborations. Based in Darwin, NT — taking commissions across Australia and overseas.";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -48,7 +49,11 @@ function PlaceholderTile({ label }: { label: string }) {
 const detailItems = [
   { label: "Email", value: "[email@placeholder.com]" },
   { label: "Phone", value: "[+00 000 000 000]" },
-  { label: "Studio", value: "Based in Darwin, NT — available for commissions Australia-wide." },
+  {
+    label: "Studio",
+    value:
+      "Robert is currently based in Darwin, Northern Territory.\nTaking commissions across Australia and overseas.",
+  },
 ];
 
 export default function InformationPage() {
@@ -68,8 +73,11 @@ export default function InformationPage() {
             Robert Mariotti
           </h2>
           <p className="mt-3 text-stone-600 leading-relaxed text-sm sm:text-base">
-            [Short blurb about Bob, with a warm note inviting enquiries &amp;
-            commissions.]
+            Robert Mariotti is a Darwin-based sculptor and artist with over 40
+            years&rsquo; experience specialising in model making, dioramas and
+            fibreglass sculpture. He welcomes enquiries and commissions from
+            across Australia and overseas, so if you have a piece in mind, get
+            in touch.
           </p>
 
           <dl className="mt-8 space-y-5">
@@ -78,7 +86,7 @@ export default function InformationPage() {
                 <dt className="text-xs uppercase tracking-wider text-stone-400">
                   {item.label}
                 </dt>
-                <dd className="mt-1 text-stone-900">{item.value}</dd>
+                <dd className="mt-1 text-stone-900 whitespace-pre-line">{item.value}</dd>
               </div>
             ))}
           </dl>
@@ -106,8 +114,15 @@ export default function InformationPage() {
         <PlaceholderTile label="Image placeholder" />
         <div className="border border-stone-200 rounded-3xl p-[clamp(2rem,3.5vw,2.5rem)]">
           <p className="text-stone-600 leading-relaxed text-sm sm:text-base">
-            I&rsquo;ve worked with [insert companies &amp; initiatives].
+            I&rsquo;ve worked with
           </p>
+          <ul className="mt-4 space-y-2">
+            {profile.workedWith.map((name) => (
+              <li key={name} className="text-stone-900">
+                {name}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

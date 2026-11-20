@@ -1,18 +1,19 @@
 // Site-wide constants used for metadata, link previews, robots and sitemap.
 
-// Absolute URL of the live site. Set NEXT_PUBLIC_SITE_URL once the domain is
-// known (e.g. https://robertmariotti.com). On Vercel it falls back to the
-// project's production URL automatically; locally it falls back to localhost.
+// Absolute URL of the live site — used for canonical links, share previews,
+// the sitemap, structured data and /llms.txt. Production builds (including
+// Vercel previews) always point at the real domain; local dev uses
+// localhost. NEXT_PUBLIC_SITE_URL overrides both if ever needed.
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  (process.env.NODE_ENV === "production"
+    ? "https://robartstudio.com"
     : "http://localhost:3000");
 
-export const siteName = "Imago Studio by Robert Mariotti";
+export const siteName = "RobArt Studio by Robert Mariotti";
 
 export const siteDescription =
-  "Robert Mariotti is a Darwin-based sculptor and artist with over 40 years’ experience specialising in model making, dioramas, and fibreglass sculpture.";
+  "Robert Mariotti is a Darwin-based sculptor and artist with over 40 years’ experience in model making, dioramas and fibreglass sculpture. Commissions taken across Australia and overseas.";
 
 // Next.js replaces (doesn't merge) a page's `openGraph` block with its parent's,
 // so every page that sets its own spreads this in to keep the shared fields.

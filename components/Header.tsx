@@ -9,7 +9,7 @@ export function Header() {
           className="inline-block whitespace-nowrap hover:opacity-75 transition-opacity"
         >
           <span className="text-lg sm:text-xl font-medium tracking-tight text-[#1a1a1a]">
-            Imago Studio
+            RobArt Studio
           </span>
           <span className="text-lg sm:text-xl font-light tracking-tight text-[#737373] ml-1.5">
             by Robert Mariotti

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/Header";
+import { StructuredData } from "@/components/StructuredData";
 import { openGraphBase, siteDescription, siteName, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
+        <StructuredData />
         <Header />
         <main className="flex-1 animate-fade-in">{children}</main>
       </body>

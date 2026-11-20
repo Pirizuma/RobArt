@@ -22,7 +22,7 @@ function p(id: string) {
 type Tile = { id: string; aspect: TileAspect; pad: TilePad };
 type Row = { cols: string; tiles: Tile[] };
 
-// Editorial rhythm down the page: 1 → 2 → 3 → 3 → 3.
+// Editorial rhythm down the page: 1 → 2 → 3 → 3.
 // The exhibition piece leads; "Other Works" (single-image pieces) closes.
 const layout: Row[] = [
   {
@@ -39,24 +39,16 @@ const layout: Row[] = [
   {
     cols: "grid-cols-2 sm:grid-cols-3",
     tiles: [
-      { id: "shark", aspect: "square", pad: "sm" },
       { id: "mirror", aspect: "square", pad: "sm" },
       { id: "chair-jacket", aspect: "square", pad: "sm" },
+      { id: "sardine", aspect: "square", pad: "sm" },
     ],
   },
   {
     cols: "grid-cols-2 sm:grid-cols-3",
     tiles: [
-      { id: "sardine", aspect: "square", pad: "sm" },
       { id: "octo", aspect: "square", pad: "sm" },
       { id: "sun-chair", aspect: "square", pad: "sm" },
-    ],
-  },
-  {
-    cols: "grid-cols-2 sm:grid-cols-3",
-    tiles: [
-      { id: "human", aspect: "square", pad: "sm" },
-      { id: "king-tut", aspect: "square", pad: "sm" },
       { id: "other-works", aspect: "square", pad: "sm" },
     ],
   },
@@ -82,7 +74,7 @@ export default function HomePage() {
           <div data-tile="hero-portrait" className="relative aspect-[4/5] sm:aspect-auto sm:h-full">
             <div className="absolute inset-[clamp(2rem,7vw,5rem)] rounded-2xl overflow-hidden shadow-sm">
               <Image
-                src="/images/Portrait.jpg"
+                src="/images/site/portrait.jpg"
                 alt="Robert Mariotti"
                 fill
                 priority

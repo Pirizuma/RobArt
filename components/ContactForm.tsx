@@ -74,7 +74,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <input type="hidden" name="_subject" value="New enquiry from the Imago website" />
+      <input type="hidden" name="_subject" value="New enquiry from the RobArt Studio website" />
       {/* Honeypot: hidden from people, filled in by bots — Formspree discards those. */}
       <input
         type="text"

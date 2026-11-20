@@ -1,13 +1,22 @@
 import type { Project } from "./types";
 
+// Placeholder content until Bob supplies the real titles, dates, materials
+// and descriptions for each piece.
+const TITLE_TBC = "Bob Title TBC";
+const YEAR_TBC = 1995;
+const MATERIALS_TBC = [
+  "Fibreglass resin, recycled general household materials… Bob to fill TBC",
+];
+const DESCRIPTION_TBC =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+
 export const projects: Project[] = [
   {
     id: "womb",
-    title: "Womb",
-    year: 2019,
-    materials: ["Ceramic", "Oxide Glaze"],
-    description:
-      "An enclosed, organic form that suggests interiority and origin. The surface is worked to retain the marks of making — pressed, hollowed, smoothed — so that the process of shaping remains legible within the finished piece.",
+    title: TITLE_TBC,
+    year: YEAR_TBC,
+    materials: MATERIALS_TBC,
+    description: DESCRIPTION_TBC,
     thumbnailImage: "/images/Womb/Womb_1.jpg",
     images: [
       "/images/Womb/Womb_1.jpg",
@@ -23,11 +32,10 @@ export const projects: Project[] = [
   },
   {
     id: "white-chiave",
-    title: "White Chiave",
-    year: 2020,
-    materials: ["Plaster", "Pigment"],
-    description:
-      "Chiave — key, in Italian — rendered white and monumental. The form hovers between utility and symbol: a key that opens nothing visible, and perhaps everything unseen. Surface texture catches light differently at each angle, giving the piece a restless, shifting presence.",
+    title: TITLE_TBC,
+    year: YEAR_TBC,
+    materials: MATERIALS_TBC,
+    description: DESCRIPTION_TBC,
     thumbnailImage: "/images/White-Chiave/Chiave_1.JPG",
     images: [
       "/images/White-Chiave/Chiave_1.JPG",
@@ -48,21 +56,19 @@ export const projects: Project[] = [
   },
   {
     id: "shark",
-    title: "Shark",
-    year: 2016,
-    materials: ["Mixed Media"],
-    description:
-      "The shark form — ancient, efficient, unnerving — rendered in still material. Movement frozen mid-glide, the predator becomes an object of contemplation rather than fear.",
+    title: TITLE_TBC,
+    year: YEAR_TBC,
+    materials: MATERIALS_TBC,
+    description: DESCRIPTION_TBC,
     thumbnailImage: "/images/Shark.JPG",
     images: ["/images/Shark.JPG"],
   },
   {
     id: "mirror",
-    title: "Mirror",
-    year: 2017,
-    materials: ["Mixed Media"],
-    description:
-      "A piece that turns reflection back on the viewer. The work destabilises the mirror's promise of accuracy — what is returned is not quite recognition, not quite stranger.",
+    title: TITLE_TBC,
+    year: YEAR_TBC,
+    materials: MATERIALS_TBC,
+    description: DESCRIPTION_TBC,
     thumbnailImage: "/images/Mirror/Mirror_1.JPG",
     images: [
       "/images/Mirror/Mirror_1.JPG",
@@ -74,11 +80,10 @@ export const projects: Project[] = [
   },
   {
     id: "chair-jacket",
-    title: "Chair Jacket",
-    year: 2018,
-    materials: ["Found Chair", "Textile", "Mixed Media"],
-    description:
-      "A found chair dressed — or armoured — in a jacket. The work collapses the boundary between the body that sits and the object that holds it. Who inhabits whom? The jacket implies an absent person; the chair, an absent use.",
+    title: TITLE_TBC,
+    year: YEAR_TBC,
+    materials: MATERIALS_TBC,
+    description: DESCRIPTION_TBC,
     thumbnailImage: "/images/Chair-Jacket/Chair-Jacket_1.JPG",
     images: [
       "/images/Chair-Jacket/Chair-Jacket_1.JPG",
@@ -90,25 +95,13 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "fountain",
-    title: "Fountain",
-    year: 2015,
-    materials: ["Stone", "Mixed Media"],
-    description:
-      "Water as metaphor and mechanism. This piece reworks the classical fountain form — public, civic, generous — as a more private and ambiguous object.",
-    thumbnailImage: "/images/Fountain.JPG",
-    images: ["/images/Fountain.JPG"],
-  },
-  {
     id: "octo",
-    title: "Octo",
-    year: 2023,
-    materials: ["Bronze", "Mixed Media"],
-    description:
-      "A study in tentacular form — eight limbs radiating outward, each one a conversation between weight and reach. The work draws on the octopus as a symbol of intelligence distributed through the body rather than concentrated in a single centre.",
-    thumbnailImage: "/images/Octo/Octo_1.JPG",
+    title: TITLE_TBC,
+    year: YEAR_TBC,
+    materials: MATERIALS_TBC,
+    description: DESCRIPTION_TBC,
+    thumbnailImage: "/images/Octo/Octo_2.JPG",
     images: [
-      "/images/Octo/Octo_1.JPG",
       "/images/Octo/Octo_2.JPG",
       "/images/Octo/Octo_3.JPG",
       "/images/Octo/Octo_4.JPG",
@@ -122,11 +115,10 @@ export const projects: Project[] = [
   },
   {
     id: "sardine",
-    title: "Sardine",
-    year: 2022,
-    materials: ["Cast Resin", "Pigment"],
-    description:
-      "An extended meditation on repetition and the individual within the collective. Each sardine form is cast separately, identical in origin yet distinct in surface. Together they suggest the compression of bodies in motion — a school, a crowd, a memory.",
+    title: TITLE_TBC,
+    year: YEAR_TBC,
+    materials: MATERIALS_TBC,
+    description: DESCRIPTION_TBC,
     thumbnailImage: "/images/Sardine/Sardine_1.JPG",
     images: [
       "/images/Sardine/Sardine_1.JPG",
@@ -157,11 +149,10 @@ export const projects: Project[] = [
   },
   {
     id: "sun-chair",
-    title: "Sun Chair",
-    year: 2021,
-    materials: ["Mixed Media"],
-    description:
-      "The chair as threshold — a seat angled toward warmth, toward light. This piece plays with the familiar object of rest and reframes it as aspiration, orienting the body outward rather than inward.",
+    title: TITLE_TBC,
+    year: YEAR_TBC,
+    materials: MATERIALS_TBC,
+    description: DESCRIPTION_TBC,
     thumbnailImage: "/images/Sun-Chair/Sun-Chair_1.JPG",
     images: [
       "/images/Sun-Chair/Sun-Chair_1.JPG",
@@ -184,43 +175,36 @@ export const projects: Project[] = [
   },
   {
     id: "human",
-    title: "Human",
-    year: 2014,
-    materials: ["Mixed Media"],
-    description:
-      "A figure pared back to its essential gesture. Not portrait, not ideal — something in between that resists resolution and invites projection.",
+    title: TITLE_TBC,
+    year: YEAR_TBC,
+    materials: MATERIALS_TBC,
+    description: DESCRIPTION_TBC,
     thumbnailImage: "/images/Human.JPG",
     images: ["/images/Human.JPG"],
   },
   {
     id: "king-tut",
-    title: "King Tut",
-    year: 2013,
-    materials: ["Mixed Media"],
-    description:
-      "A response to one of history's most iconic faces — the golden mask that made a boy-king into myth. This piece asks what happens when that image is remade by hand, in different material, at a different moment in time.",
+    title: TITLE_TBC,
+    year: YEAR_TBC,
+    materials: MATERIALS_TBC,
+    description: DESCRIPTION_TBC,
     thumbnailImage: "/images/King-Tut.jpg",
     images: ["/images/King-Tut.jpg"],
   },
   {
-    id: "newspaper",
-    title: "Newspaper",
-    year: 2012,
-    materials: ["Mixed Media", "Found Material"],
-    description:
-      "The daily paper — carrier of record, of opinion, of ephemera — given a permanence it was never designed to hold. The work preserves the disposable.",
-    thumbnailImage: "/images/Newspaper.JPG",
-    images: ["/images/Newspaper.JPG"],
-  },
-  {
-    id: "guiness",
-    title: "Guinness",
-    year: 2011,
-    materials: ["Mixed Media"],
-    description:
-      "The pint as cultural artefact. A familiar form elevated through material transformation — the everyday object studied long enough to become something else entirely.",
+    // Catch-all for pieces documented with a single photo. Add new
+    // one-off works to this images list as they come up.
+    id: "other-works",
+    title: "Other Works",
+    year: YEAR_TBC,
+    materials: MATERIALS_TBC,
+    description: DESCRIPTION_TBC,
     thumbnailImage: "/images/Guiness.JPG",
-    images: ["/images/Guiness.JPG"],
+    images: [
+      "/images/Guiness.JPG",
+      "/images/Fountain.JPG",
+      "/images/Newspaper.JPG",
+    ],
   },
 ];
 

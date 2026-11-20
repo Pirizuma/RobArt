@@ -19,7 +19,6 @@ export const imageSizes: Record<string, [number, number]> = {
   "/images/Mirror/Mirror_4.JPG": [1920, 2560],
   "/images/Mirror/Mirror_5.JPG": [1920, 2560],
   "/images/Newspaper.JPG": [2172, 1665],
-  "/images/Octo/Octo_1.JPG": [1536, 2048],
   "/images/Octo/Octo_10.JPG": [793, 1154],
   "/images/Octo/Octo_2.JPG": [1706, 2560],
   "/images/Octo/Octo_3.JPG": [1706, 2560],

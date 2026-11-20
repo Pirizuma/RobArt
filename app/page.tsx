@@ -22,7 +22,8 @@ function p(id: string) {
 type Tile = { id: string; aspect: TileAspect; pad: TilePad };
 type Row = { cols: string; tiles: Tile[] };
 
-// Varied editorial rhythm down the page: 2 → 3 → 2 → 1 → 3 → 2.
+// Varied editorial rhythm down the page: 2 → 3 → 1 → 3 → 2.
+// "Other Works" (single-image pieces) always closes the page.
 const layout: Row[] = [
   {
     cols: "grid-cols-1 sm:grid-cols-2",
@@ -40,13 +41,6 @@ const layout: Row[] = [
     ],
   },
   {
-    cols: "grid-cols-1 sm:grid-cols-2",
-    tiles: [
-      { id: "fountain", aspect: "landscape", pad: "md" },
-      { id: "octo", aspect: "landscape", pad: "md" },
-    ],
-  },
-  {
     cols: "grid-cols-1",
     tiles: [{ id: "sardine", aspect: "wide", pad: "lg" }],
   },
@@ -61,8 +55,8 @@ const layout: Row[] = [
   {
     cols: "grid-cols-1 sm:grid-cols-2",
     tiles: [
-      { id: "newspaper", aspect: "portrait", pad: "md" },
-      { id: "guiness", aspect: "portrait", pad: "md" },
+      { id: "octo", aspect: "landscape", pad: "md" },
+      { id: "other-works", aspect: "landscape", pad: "md" },
     ],
   },
 ];

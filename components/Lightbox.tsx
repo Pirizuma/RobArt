@@ -3,6 +3,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
+import { imagePlaceholders } from "@/lib/imagePlaceholders";
+
+// Shared by the viewer and by preloadViewerImages(): the browser picks the
+// same file from the srcset either way, so a preload is actually reused.
+export const VIEWER_SIZES = "100vw";
 
 type LightboxProps = {
   images: string[];
@@ -135,20 +140,14 @@ export function Lightbox({
             className="relative h-full w-full shrink-0 snap-center snap-always"
             aria-hidden={i !== index}
           >
-            <div className="absolute inset-0 m-auto h-[calc(100%-7rem)] w-[calc(100%-1rem)] sm:w-[calc(100%-8rem)]">
-              <Image
-                src={src}
-                alt={title ? `${title} — image ${i + 1} of ${count}` : ""}
-                fill
-                sizes="100vw"
-                className="object-contain select-none"
-                draggable={false}
-                // Current image and its neighbours load straight away;
-                // the rest load as they come into view.
-                loading={Math.abs(i - index) <= 1 ? "eager" : "lazy"}
-                fetchPriority={i === currentIndex ? "high" : "auto"}
-              />
-            </div>
+            <Slide
+              src={src}
+              alt={title ? `${title} — image ${i + 1} of ${count}` : ""}
+              // Current image and its neighbours load straight away;
+              // the rest load as they come into view.
+              eager={Math.abs(i - index) <= 1}
+              high={i === currentIndex}
+            />
           </div>
         ))}
       </div>
@@ -227,5 +226,63 @@ export function Lightbox({
       )}
     </div>,
     document.body
+  );
+}
+
+/**
+ * One photo in the viewer. Shows a blurred preview instantly (blur-up), then
+ * the full photo on top once it arrives; if that takes longer than a moment,
+ * a small spinner says it's on its way rather than leaving a frozen frame.
+ */
+function Slide({
+  src,
+  alt,
+  eager,
+  high,
+}: {
+  src: string;
+  alt: string;
+  eager: boolean;
+  high: boolean;
+}) {
+  const [loaded, setLoaded] = useState(false);
+  const [slow, setSlow] = useState(false);
+
+  useEffect(() => {
+    if (loaded) return;
+    const t = setTimeout(() => setSlow(true), 400);
+    return () => clearTimeout(t);
+  }, [loaded]);
+
+  const blur = imagePlaceholders[src];
+
+  return (
+    <div className="absolute inset-0 m-auto h-[calc(100%-7rem)] w-[calc(100%-1rem)] sm:w-[calc(100%-8rem)]">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={VIEWER_SIZES}
+        className="select-none"
+        // objectFit via style (not a class) so Next sizes the blurred
+        // preview the same way as the photo — no jump when it sharpens.
+        style={{ objectFit: "contain" }}
+        placeholder={blur ? "blur" : "empty"}
+        blurDataURL={blur}
+        draggable={false}
+        loading={eager ? "eager" : "lazy"}
+        fetchPriority={high ? "high" : "auto"}
+        onLoad={() => setLoaded(true)}
+      />
+      {!loaded && slow && (
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center" role="status">
+          <span className="sr-only">Loading image</span>
+          <span
+            aria-hidden="true"
+            className="h-8 w-8 animate-spin rounded-full border-2 border-white/25 border-t-white/80 motion-reduce:animate-none"
+          />
+        </div>
+      )}
+    </div>
   );
 }

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "images:sizes": "node scripts/generate-image-sizes.mjs"
+    "images:sizes": "node scripts/generate-image-sizes.mjs && node scripts/generate-image-placeholders.mjs"
   },
   "dependencies": {
     "@paper-design/shaders-react": "^0.0.76",

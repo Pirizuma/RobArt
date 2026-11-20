@@ -6,6 +6,8 @@ import Link from "next/link";
 import type { Project } from "@/lib/types";
 import { Lightbox } from "@/components/Lightbox";
 import { exhibitionMode } from "@/lib/site";
+import { imagePlaceholders } from "@/lib/imagePlaceholders";
+import { preloadViewerImages } from "@/lib/preloadViewerImages";
 
 export type TileAspect = "portrait" | "square" | "landscape" | "wide";
 export type TilePad = "sm" | "md" | "lg";
@@ -41,8 +43,6 @@ export function ProjectCard({
   sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
 }: ProjectCardProps) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  // Fade the photo in once it has loaded, over a soft placeholder.
-  const [loaded, setLoaded] = useState(false);
 
   const card = (
     <article data-tile={`card-${project.id}`}>
@@ -55,10 +55,10 @@ export function ProjectCard({
             alt=""
             fill
             sizes={sizes}
-            onLoad={() => setLoaded(true)}
-            className={`object-cover transition-[transform,opacity] duration-500 ease-out group-hover:scale-[1.02] motion-reduce:transition-none ${
-              loaded ? "opacity-100" : "opacity-0"
-            }`}
+            // Blurred preview shows instantly, then sharpens (blur-up).
+            placeholder={imagePlaceholders[project.thumbnailImage] ? "blur" : "empty"}
+            blurDataURL={imagePlaceholders[project.thumbnailImage]}
+            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02] motion-reduce:transition-none"
           />
         </div>
         <div
@@ -86,6 +86,11 @@ export function ProjectCard({
           <button
             type="button"
             onClick={() => setLightboxIndex(0)}
+            // Start loading the viewer's first photos on hover, keyboard
+            // focus or the first touch — before the click/tap completes.
+            onPointerEnter={() => preloadViewerImages(project.images)}
+            onFocus={() => preloadViewerImages(project.images)}
+            onTouchStart={() => preloadViewerImages(project.images)}
             aria-label={`View images of ${project.title}`}
             className="absolute inset-0 rounded-3xl cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2"
           />

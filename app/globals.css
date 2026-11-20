@@ -6,6 +6,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   @apply text-stone-900 antialiased;
   background: linear-gradient(
@@ -16,4 +22,12 @@ body {
     #f8f8f7 100%
   );
   min-height: 100vh;
+}
+
+/* Scrollable but with no visible scrollbar (lightbox swipe track). */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

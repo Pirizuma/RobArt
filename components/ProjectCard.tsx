@@ -41,19 +41,24 @@ export function ProjectCard({
   sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
 }: ProjectCardProps) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  // Fade the photo in once it has loaded, over a soft placeholder.
+  const [loaded, setLoaded] = useState(false);
 
   const card = (
     <article data-tile={`card-${project.id}`}>
       <div className={`border border-stone-200 rounded-3xl ${padClass[pad]}`}>
         <div
-          className={`${aspectClass[aspect]} relative overflow-hidden rounded-2xl shadow-sm`}
+          className={`${aspectClass[aspect]} relative overflow-hidden rounded-2xl shadow-sm bg-stone-100`}
         >
           <Image
             src={project.thumbnailImage}
-            alt={project.title}
+            alt=""
             fill
             sizes={sizes}
-            className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+            onLoad={() => setLoaded(true)}
+            className={`object-cover transition-[transform,opacity] duration-500 ease-out group-hover:scale-[1.02] motion-reduce:transition-none ${
+              loaded ? "opacity-100" : "opacity-0"
+            }`}
           />
         </div>
         <div
@@ -63,7 +68,7 @@ export function ProjectCard({
           <h2 className="font-light text-stone-900 text-base group-hover:text-stone-500 transition-colors">
             {project.title}
           </h2>
-          <p className="text-stone-400 text-sm mt-0.5">{project.year}</p>
+          <p className="text-stone-500 text-sm mt-0.5">{project.year}</p>
         </div>
       </div>
     </article>
@@ -90,7 +95,6 @@ export function ProjectCard({
             images={project.images}
             currentIndex={lightboxIndex}
             onClose={() => setLightboxIndex(null)}
-            onNavigate={setLightboxIndex}
             title={project.title}
           />
         )}

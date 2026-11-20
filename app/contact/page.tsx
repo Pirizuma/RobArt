@@ -23,7 +23,7 @@ function PlaceholderTile({ label }: { label: string }) {
   return (
     <div className="border border-stone-200 rounded-3xl p-[clamp(1.5rem,3vw,2rem)]">
       <div className="aspect-[4/3] rounded-2xl bg-stone-100 flex items-center justify-center">
-        <div className="flex flex-col items-center text-stone-400">
+        <div className="flex flex-col items-center text-stone-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-8 h-8"
@@ -90,7 +90,7 @@ export default function InformationPage() {
           <dl className="mt-8 space-y-5">
             {detailItems.map((item) => (
               <div key={item.label}>
-                <dt className="text-xs uppercase tracking-wider text-stone-400">
+                <dt className="text-xs uppercase tracking-wider text-stone-500">
                   {item.label}
                 </dt>
                 <dd className="mt-1 text-stone-900 whitespace-pre-line">

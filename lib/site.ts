@@ -17,11 +17,21 @@ export const siteDescription =
 
 // Next.js replaces (doesn't merge) a page's `openGraph` block with its parent's,
 // so every page that sets its own spreads this in to keep the shared fields.
+// Large link-preview image (iMessage, WhatsApp, Facebook, LinkedIn…).
+// Included in openGraphBase so every page gets it, not just the homepage.
+export const shareImage = {
+  url: "/opengraph-image.jpg",
+  width: 1200,
+  height: 630,
+  alt: siteName,
+};
+
 export const openGraphBase = {
-  type: "website",
+  type: "website" as const,
   siteName,
   locale: "en_AU",
-} as const;
+  images: [shareImage],
+};
 
 // Formspree form ID — the part after /f/ in the form's endpoint
 // (https://formspree.io/f/<id>). Not a secret: it's sent with every submission.

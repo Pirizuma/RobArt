@@ -6,19 +6,19 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
         <Link
           href="/"
-          className="inline-block whitespace-nowrap hover:opacity-75 transition-opacity"
+          className="inline-block whitespace-nowrap py-2 -my-2 hover:opacity-75 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 rounded-md"
         >
-          <span className="text-lg sm:text-xl font-medium tracking-tight text-[#1a1a1a]">
+          <span className="text-base sm:text-xl font-medium tracking-tight text-[#1a1a1a]">
             RobArt Studio
           </span>
-          <span className="text-lg sm:text-xl font-light tracking-tight text-[#737373] ml-1.5">
+          <span className="text-base sm:text-xl font-light tracking-tight text-[#737373] ml-1.5">
             by Robert Mariotti
           </span>
         </Link>
         <nav className="flex items-center text-sm text-stone-500 whitespace-nowrap">
           <Link
             href="/contact"
-            className="hover:text-stone-900 transition-colors"
+            className="inline-flex items-center min-h-11 px-2 -mx-2 hover:text-stone-900 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 rounded-md"
           >
             Contact
           </Link>

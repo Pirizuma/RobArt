@@ -8,6 +8,7 @@ import {
 } from "@/components/ProjectCard";
 import { LiquidGlassButton } from "@/components/LiquidGlassButton";
 import { HeroMeshGradient } from "@/components/HeroMeshGradient";
+import { Reveal } from "@/components/Reveal";
 import { openGraphBase } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -108,7 +109,7 @@ export default function HomePage() {
                 boxShadow: "rgba(255,255,255,0.4) 0px 1px 0px inset, rgba(255,255,255,0.08) 0px 0px 18px inset, rgba(0,0,0,0.25) 0px 8px 32px",
               }} />
               <div className="relative z-10 flex flex-col px-6 py-8 sm:px-8 sm:py-10">
-                <h2 className="text-xl font-medium text-stone-900 tracking-tight">Robert Mariotti</h2>
+                <h1 className="text-xl font-medium text-stone-900 tracking-tight">Robert Mariotti</h1>
                 <p className="mt-4 text-stone-700 leading-relaxed text-sm sm:text-base">
                   Robert Mariotti is a Darwin-based sculptor and artist with
                   over 40 years&rsquo; experience specialising in model making,
@@ -136,8 +137,11 @@ export default function HomePage() {
               : "(max-width: 640px) 50vw, 33vw";
         return (
           <div key={i} className={`grid ${row.cols} ${row.gap ?? "gap-6 sm:gap-8"}`}>
-            {row.tiles.map((t) => (
-              <ProjectCard key={t.id} project={p(t.id)} aspect={t.aspect} pad={t.pad} sizes={sizes} />
+            {row.tiles.map((t, ti) => (
+              // Small stagger so tiles in the same row ease in one after another.
+              <Reveal key={t.id} delay={(ti % 3) * 80}>
+                <ProjectCard project={p(t.id)} aspect={t.aspect} pad={t.pad} sizes={sizes} />
+              </Reveal>
             ))}
           </div>
         );

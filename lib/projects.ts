@@ -12,6 +12,30 @@ const DESCRIPTION_TBC =
 
 export const projects: Project[] = [
   {
+    // Current exhibition piece — leads the homepage.
+    id: "refractory-period",
+    title: "Refractory Period",
+    year: 2026,
+    materials: MATERIALS_TBC,
+    description: DESCRIPTION_TBC,
+    thumbnailImage: "/images/Refractory-Period/Refractory-Period_12.jpg",
+    images: [
+      "/images/Refractory-Period/Refractory-Period_12.jpg",
+      "/images/Refractory-Period/Refractory-Period_1.jpg",
+      "/images/Refractory-Period/Refractory-Period_2.jpg",
+      "/images/Refractory-Period/Refractory-Period_3.jpg",
+      "/images/Refractory-Period/Refractory-Period_4.jpg",
+      "/images/Refractory-Period/Refractory-Period_5.jpg",
+      "/images/Refractory-Period/Refractory-Period_6.jpg",
+      "/images/Refractory-Period/Refractory-Period_7.jpg",
+      "/images/Refractory-Period/Refractory-Period_8.jpg",
+      "/images/Refractory-Period/Refractory-Period_9.jpg",
+      "/images/Refractory-Period/Refractory-Period_11.jpg",
+      "/images/Refractory-Period/Refractory-Period_13.jpg",
+      "/images/Refractory-Period/Refractory-Period_10.jpg",
+    ],
+  },
+  {
     id: "womb",
     title: TITLE_TBC,
     year: YEAR_TBC,

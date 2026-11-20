@@ -25,3 +25,8 @@ export const openGraphBase = {
 // Formspree form ID — the part after /f/ in the form's endpoint
 // (https://formspree.io/f/<id>). Not a secret: it's sent with every submission.
 export const formspreeFormId = "xaeoozll";
+
+// Exhibition (MVP) mode: tiles open a swipeable image modal instead of
+// linking to project pages, and project pages aren't built. Set to false
+// to restore the full site once titles/descriptions are ready.
+export const exhibitionMode = true;

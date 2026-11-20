@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useRef } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 
 type LightboxProps = {
@@ -8,6 +9,8 @@ type LightboxProps = {
   currentIndex: number;
   onClose: () => void;
   onNavigate: (index: number) => void;
+  /** Used for image alt text, e.g. "Refractory Period — image 2". */
+  title?: string;
 };
 
 export function Lightbox({
@@ -15,6 +18,7 @@ export function Lightbox({
   currentIndex,
   onClose,
   onNavigate,
+  title,
 }: LightboxProps) {
   const goPrev = useCallback(() => {
     onNavigate(currentIndex > 0 ? currentIndex - 1 : images.length - 1);
@@ -41,13 +45,15 @@ export function Lightbox({
     };
   }, []);
 
-  let touchStartX = 0;
+  // A ref (not a plain variable) so the start position survives re-renders
+  // mid-swipe.
+  const touchStartX = useRef(0);
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX = e.touches[0].clientX;
+    touchStartX.current = e.touches[0].clientX;
   };
   const handleTouchEnd = (e: React.TouchEvent) => {
     const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX - touchEndX;
+    const diff = touchStartX.current - touchEndX;
     if (Math.abs(diff) > 50) {
       if (diff > 0) goNext();
       else goPrev();
@@ -57,7 +63,10 @@ export function Lightbox({
   const currentSrc = images[currentIndex];
   const isExternal = currentSrc.startsWith("http");
 
-  return (
+  // Portalled to <body> so it always sits above the sticky header —
+  // ancestors with transforms/animations would otherwise trap it in
+  // their stacking context.
+  return createPortal(
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 animate-fade-in"
       role="dialog"
@@ -103,7 +112,7 @@ export function Lightbox({
         <div className="relative w-full h-full">
           <Image
             src={currentSrc}
-            alt=""
+            alt={title ? `${title} — image ${currentIndex + 1}` : ""}
             fill
             className="object-contain"
             sizes="(max-width: 1200px) 100vw, 1200px"
@@ -115,6 +124,7 @@ export function Lightbox({
       <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-sm">
         {currentIndex + 1} / {images.length}
       </p>
-    </div>
+    </div>,
+    document.body
   );
 }

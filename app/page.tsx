@@ -22,9 +22,13 @@ function p(id: string) {
 type Tile = { id: string; aspect: TileAspect; pad: TilePad };
 type Row = { cols: string; tiles: Tile[] };
 
-// Varied editorial rhythm down the page: 2 → 3 → 1 → 3 → 2.
-// "Other Works" (single-image pieces) always closes the page.
+// Editorial rhythm down the page: 1 → 2 → 3 → 3 → 3.
+// The exhibition piece leads; "Other Works" (single-image pieces) closes.
 const layout: Row[] = [
+  {
+    cols: "grid-cols-1",
+    tiles: [{ id: "refractory-period", aspect: "wide", pad: "lg" }],
+  },
   {
     cols: "grid-cols-1 sm:grid-cols-2",
     tiles: [
@@ -41,22 +45,19 @@ const layout: Row[] = [
     ],
   },
   {
-    cols: "grid-cols-1",
-    tiles: [{ id: "sardine", aspect: "wide", pad: "lg" }],
+    cols: "grid-cols-2 sm:grid-cols-3",
+    tiles: [
+      { id: "sardine", aspect: "square", pad: "sm" },
+      { id: "octo", aspect: "square", pad: "sm" },
+      { id: "sun-chair", aspect: "square", pad: "sm" },
+    ],
   },
   {
     cols: "grid-cols-2 sm:grid-cols-3",
     tiles: [
-      { id: "sun-chair", aspect: "square", pad: "sm" },
       { id: "human", aspect: "square", pad: "sm" },
       { id: "king-tut", aspect: "square", pad: "sm" },
-    ],
-  },
-  {
-    cols: "grid-cols-1 sm:grid-cols-2",
-    tiles: [
-      { id: "octo", aspect: "landscape", pad: "md" },
-      { id: "other-works", aspect: "landscape", pad: "md" },
+      { id: "other-works", aspect: "square", pad: "sm" },
     ],
   },
 ];
@@ -142,12 +143,19 @@ export default function HomePage() {
         <div key={i} className={`grid ${row.cols} gap-6 sm:gap-8`}>
           {row.tiles.map((t, ti) => {
             const isFirstOfThree = row.tiles.length === 3 && ti === 0;
+            // Tile width hint for responsive images (container caps at 1152px).
+            const sizes =
+              row.tiles.length === 1
+                ? "(max-width: 1152px) 100vw, 1100px"
+                : row.tiles.length === 2 || isFirstOfThree
+                  ? "(max-width: 640px) 100vw, 50vw"
+                  : "(max-width: 640px) 50vw, 33vw";
             return (
               <div
                 key={t.id}
                 className={isFirstOfThree ? "col-span-2 sm:col-span-1" : undefined}
               >
-                <ProjectCard project={p(t.id)} aspect={t.aspect} pad={t.pad} />
+                <ProjectCard project={p(t.id)} aspect={t.aspect} pad={t.pad} sizes={sizes} />
               </div>
             );
           })}

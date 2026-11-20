@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
 import { HeroMeshGradient } from "@/components/HeroMeshGradient";
-import { openGraphBase } from "@/lib/site";
+import { exhibitionMode, openGraphBase } from "@/lib/site";
 import { profile } from "@/lib/profile";
 
 const contactDescription =
@@ -46,9 +46,16 @@ function PlaceholderTile({ label }: { label: string }) {
   );
 }
 
-const detailItems = [
-  { label: "Email", value: "[email@placeholder.com]" },
-  { label: "Phone", value: "[+00 000 000 000]" },
+type DetailItem = { label: string; value: string; href?: string };
+
+const detailItems: DetailItem[] = [
+  {
+    label: "Email",
+    value: profile.email,
+    href: `mailto:${profile.email}`,
+  },
+  // Phone is hidden in exhibition mode; it returns with the full site.
+  ...(exhibitionMode ? [] : [{ label: "Phone", value: "[+00 000 000 000]" }]),
   {
     label: "Studio",
     value:
@@ -86,7 +93,18 @@ export default function InformationPage() {
                 <dt className="text-xs uppercase tracking-wider text-stone-400">
                   {item.label}
                 </dt>
-                <dd className="mt-1 text-stone-900 whitespace-pre-line">{item.value}</dd>
+                <dd className="mt-1 text-stone-900 whitespace-pre-line">
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      className="underline decoration-stone-300 underline-offset-4 hover:decoration-stone-900 transition-colors"
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    item.value
+                  )}
+                </dd>
               </div>
             ))}
           </dl>

@@ -22,6 +22,6 @@ export const profile = {
   workedWith: ["Nitmiluk Visitor Centre", "Darwin Italian Festival"],
   // Fill these in when confirmed — they're also published in the
   // structured data once set.
-  email: "",
+  email: "robartstudio@gmail.com",
   phone: "",
 };

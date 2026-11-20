@@ -15,9 +15,7 @@ export function BioText({ paragraphs }: { paragraphs: string[] }) {
   const [first, ...rest] = paragraphs;
 
   return (
-    // hyphens-auto (phones only): long words like "contemporary" split at the
-    // line end instead of leaving a big gap on narrow screens.
-    <div className="mt-4 text-stone-600 leading-relaxed text-sm sm:text-base hyphens-auto sm:hyphens-manual">
+    <div className="mt-4 text-stone-600 leading-relaxed text-sm sm:text-base">
       <p>{noWidow(first)}</p>
       {rest.length > 0 && (
         <>

@@ -113,7 +113,7 @@ export default function HomePage() {
                 <p className="mt-4 text-stone-700 leading-relaxed text-sm sm:text-base">
                   Robert Mariotti is a Darwin-based sculptor and artist with
                   over 40 years&rsquo; experience specialising in model making,
-                  dioramas, and fibreglass sculpture.
+                  dioramas, and fibreglass&nbsp;sculpture.
                 </p>
                 <LiquidGlassButton href="/contact" className="mt-6 sm:mt-8 self-start">
                   Get in touch →

@@ -49,7 +49,7 @@ const detailItems: DetailItem[] = [
   {
     label: "Studio",
     value:
-      "Robert is currently based in Darwin, Northern Territory.\nTaking commissions across Australia and overseas.",
+      "Robert is currently based in Darwin, Northern\u00a0Territory.\nTaking commissions across Australia and\u00a0overseas.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function InformationPage() {
             years&rsquo; experience specialising in model making, dioramas and
             fibreglass sculpture. He welcomes enquiries and commissions from
             across Australia and overseas, so if you have a piece in mind, get
-            in touch.
+            in&nbsp;touch.
           </p>
 
           <dl className="mt-8 space-y-5">
@@ -122,7 +122,7 @@ export default function InformationPage() {
         <PhotoTile />
         <div className="border border-stone-200 rounded-3xl p-[clamp(2rem,3.5vw,2.5rem)]">
           <p className="text-stone-600 leading-relaxed text-sm sm:text-base">
-            I&rsquo;ve worked with
+            Robert has worked with:
           </p>
           <ul className="mt-4 space-y-2">
             {profile.workedWith.map((name) => (

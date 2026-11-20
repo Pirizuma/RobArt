@@ -20,9 +20,10 @@ function p(id: string) {
 }
 
 type Tile = { id: string; aspect: TileAspect; pad: TilePad };
-type Row = { cols: string; tiles: Tile[] };
+// `gap` defaults to "gap-6 sm:gap-8" when not set.
+type Row = { cols: string; gap?: string; tiles: Tile[] };
 
-// Editorial rhythm down the page: 1 → 2 → 3 → 3.
+// Editorial rhythm down the page: 1 → 2 → 3 → 3 (mobile: 1 → 1 → 1 → 2 → 2 → 2).
 // The exhibition piece leads; "Other Works" (single-image pieces) closes.
 const layout: Row[] = [
   {
@@ -36,17 +37,15 @@ const layout: Row[] = [
       { id: "octo", aspect: "portrait", pad: "lg" },
     ],
   },
+  // Six small tiles in one grid: 3 rows of 2 on mobile, 2 rows of 3 on sm:+.
+  // Vertical gap matches the spacing between the page's other rows.
   {
     cols: "grid-cols-2 sm:grid-cols-3",
+    gap: "gap-x-6 gap-y-8 sm:gap-x-8 sm:gap-y-10",
     tiles: [
       { id: "white-chiave", aspect: "square", pad: "sm" },
       { id: "sun-chair", aspect: "square", pad: "sm" },
       { id: "mirror", aspect: "square", pad: "sm" },
-    ],
-  },
-  {
-    cols: "grid-cols-2 sm:grid-cols-3",
-    tiles: [
       { id: "chair-jacket", aspect: "square", pad: "sm" },
       { id: "sardine", aspect: "square", pad: "sm" },
       { id: "other-works", aspect: "square", pad: "sm" },
@@ -125,34 +124,24 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Project rows — varied layout.
-          On mobile, a row of 3 would otherwise leave its 3rd tile alone in a
-          half-width column with dead space beside it. Instead, tile 1 spans
-          the full mobile width and tiles 2+3 pair up cleanly below it — no
-          tile ever sits alone at half width. Unaffected on sm:+, where all
-          three sit side by side as designed. */}
-      {layout.map((row, i) => (
-        <div key={i} className={`grid ${row.cols} gap-6 sm:gap-8`}>
-          {row.tiles.map((t, ti) => {
-            const isFirstOfThree = row.tiles.length === 3 && ti === 0;
-            // Tile width hint for responsive images (container caps at 1152px).
-            const sizes =
-              row.tiles.length === 1
-                ? "(max-width: 1152px) 100vw, 1100px"
-                : row.tiles.length === 2 || isFirstOfThree
-                  ? "(max-width: 640px) 100vw, 50vw"
-                  : "(max-width: 640px) 50vw, 33vw";
-            return (
-              <div
-                key={t.id}
-                className={isFirstOfThree ? "col-span-2 sm:col-span-1" : undefined}
-              >
-                <ProjectCard project={p(t.id)} aspect={t.aspect} pad={t.pad} sizes={sizes} />
-              </div>
-            );
-          })}
-        </div>
-      ))}
+      {/* Project rows — see `layout` above. Rows stack to one column on
+          mobile except the small-tile grid, which goes two-up. */}
+      {layout.map((row, i) => {
+        // Tile width hint for responsive images (container caps at 1152px).
+        const sizes =
+          row.tiles.length === 1
+            ? "(max-width: 1152px) 100vw, 1100px"
+            : row.tiles.length === 2
+              ? "(max-width: 640px) 100vw, 50vw"
+              : "(max-width: 640px) 50vw, 33vw";
+        return (
+          <div key={i} className={`grid ${row.cols} ${row.gap ?? "gap-6 sm:gap-8"}`}>
+            {row.tiles.map((t) => (
+              <ProjectCard key={t.id} project={p(t.id)} aspect={t.aspect} pad={t.pad} sizes={sizes} />
+            ))}
+          </div>
+        );
+      })}
 
     </div>
   );

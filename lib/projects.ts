@@ -50,8 +50,6 @@ export const projects: Project[] = [
       "/images/womb/womb-05.jpg",
       "/images/womb/womb-06.jpg",
       "/images/womb/womb-07.jpg",
-      "/images/womb/womb-08.jpg",
-      "/images/womb/womb-09.jpg",
     ],
   },
   {
@@ -69,8 +67,6 @@ export const projects: Project[] = [
       "/images/white-chiave/white-chiave-05.jpg",
       "/images/white-chiave/white-chiave-06.jpg",
       "/images/white-chiave/white-chiave-07.jpg",
-      "/images/white-chiave/white-chiave-08.jpg",
-      "/images/white-chiave/white-chiave-09.jpg",
     ],
   },
   {
@@ -100,8 +96,6 @@ export const projects: Project[] = [
       "/images/chair-jacket/chair-jacket-02.jpg",
       "/images/chair-jacket/chair-jacket-03.jpg",
       "/images/chair-jacket/chair-jacket-04.jpg",
-      "/images/chair-jacket/chair-jacket-05.jpg",
-      "/images/chair-jacket/chair-jacket-06.jpg",
     ],
   },
   {
@@ -153,8 +147,6 @@ export const projects: Project[] = [
       "/images/sardine/sardine-20.jpg",
       "/images/sardine/sardine-21.jpg",
       "/images/sardine/sardine-22.jpg",
-      "/images/sardine/sardine-23.jpg",
-      "/images/sardine/sardine-24.jpg",
     ],
   },
   {
@@ -179,8 +171,6 @@ export const projects: Project[] = [
       "/images/sun-chair/sun-chair-12.jpg",
       "/images/sun-chair/sun-chair-13.jpg",
       "/images/sun-chair/sun-chair-14.jpg",
-      "/images/sun-chair/sun-chair-15.jpg",
-      "/images/sun-chair/sun-chair-16.jpg",
     ],
   },
   {

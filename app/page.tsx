@@ -33,22 +33,22 @@ const layout: Row[] = [
     cols: "grid-cols-1 sm:grid-cols-2",
     tiles: [
       { id: "womb", aspect: "portrait", pad: "lg" },
-      { id: "white-chiave", aspect: "portrait", pad: "lg" },
+      { id: "octo", aspect: "portrait", pad: "lg" },
     ],
   },
   {
     cols: "grid-cols-2 sm:grid-cols-3",
     tiles: [
+      { id: "white-chiave", aspect: "square", pad: "sm" },
+      { id: "sun-chair", aspect: "square", pad: "sm" },
       { id: "mirror", aspect: "square", pad: "sm" },
+    ],
+  },
+  {
+    cols: "grid-cols-2 sm:grid-cols-3",
+    tiles: [
       { id: "chair-jacket", aspect: "square", pad: "sm" },
       { id: "sardine", aspect: "square", pad: "sm" },
-    ],
-  },
-  {
-    cols: "grid-cols-2 sm:grid-cols-3",
-    tiles: [
-      { id: "octo", aspect: "square", pad: "sm" },
-      { id: "sun-chair", aspect: "square", pad: "sm" },
       { id: "other-works", aspect: "square", pad: "sm" },
     ],
   },

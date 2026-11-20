@@ -109,10 +109,18 @@ export default function HomePage() {
                 boxShadow: "rgba(255,255,255,0.4) 0px 1px 0px inset, rgba(255,255,255,0.08) 0px 0px 18px inset, rgba(0,0,0,0.25) 0px 8px 32px",
               }} />
               <div className="relative z-10 flex flex-col px-6 py-8 sm:px-8 sm:py-10">
-                <h1 className="text-xl font-medium text-stone-900 tracking-tight">Robert Mariotti</h1>
+                <h1 className="text-xl font-medium text-stone-900 tracking-tight">
+                  Robert Mariotti{" "}
+                  {/* The bar is visual only; screen readers hear "Robert Mariotti, Sculptor". */}
+                  <span className="font-light text-stone-500">
+                    <span aria-hidden="true">| </span>
+                    <span className="sr-only">, </span>
+                    Sculptor
+                  </span>
+                </h1>
                 <p className="mt-4 text-stone-700 leading-relaxed text-sm sm:text-base">
                   Robert Mariotti is a Darwin-based sculptor and artist with
-                  over 40 years&rsquo; experience specialising in model making,
+                  over 40 years of experience specialising in model making,
                   dioramas, and fibreglass&nbsp;sculpture.
                 </p>
                 <LiquidGlassButton href="/contact" className="mt-6 sm:mt-8 self-start">

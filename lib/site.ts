@@ -13,7 +13,7 @@ export const siteUrl =
 export const siteName = "RobArt Studio by Robert Mariotti";
 
 export const siteDescription =
-  "Robert Mariotti is a Darwin-based sculptor and artist with over 40 years’ experience in model making, dioramas and fibreglass sculpture. Commissions taken across Australia and overseas.";
+  "Robert Mariotti is a Darwin-based sculptor and artist with over 40 years of experience in model making, dioramas and fibreglass sculpture. Commissions taken across Australia and overseas.";
 
 // Next.js replaces (doesn't merge) a page's `openGraph` block with its parent's,
 // so every page that sets its own spreads this in to keep the shared fields.

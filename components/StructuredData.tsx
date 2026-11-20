@@ -24,25 +24,28 @@ export function StructuredData() {
     "@graph": [
       {
         "@type": "Person",
-        "@id": `${siteUrl}/#robert`,
+        "@id": `${siteUrl}/#robert-mariotti`,
         name: profile.name,
-        jobTitle: profile.role,
-        description: siteDescription,
-        url: siteUrl,
+        jobTitle: profile.jobTitles,
+        description: profile.personDescription,
+        url: `${siteUrl}/`,
         image: `${siteUrl}/images/site/portrait.jpg`,
         address,
-        knowsAbout: profile.specialisms,
+        knowsAbout: profile.knowsAbout,
+        // Links to the studio node below (a ProfessionalService, which is
+        // a kind of Organization) rather than repeating it.
         worksFor: { "@id": `${siteUrl}/#studio` },
         ...contact,
       },
       {
         "@type": "ProfessionalService",
         "@id": `${siteUrl}/#studio`,
-        name: siteName,
+        name: profile.studio,
+        alternateName: siteName,
         description: siteDescription,
-        url: siteUrl,
+        url: `${siteUrl}/`,
         image: `${siteUrl}/opengraph-image.jpg`,
-        founder: { "@id": `${siteUrl}/#robert` },
+        founder: { "@id": `${siteUrl}/#robert-mariotti` },
         address,
         // Australia first keeps the local signal; Worldwide shows he'll
         // take work further afield.

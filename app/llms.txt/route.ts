@@ -16,7 +16,10 @@ export function GET() {
 
 > ${siteDescription}
 
-${profile.name} is a ${profile.role.toLowerCase()} with ${profile.experience} of experience, based in ${profile.locationLabel} and taking on commissions ${profile.serviceArea}.
+${profile.name} — ${profile.headline}. Based in ${profile.locationLabel}; taking commissions ${profile.serviceArea}.
+
+## About
+${profile.about.join("\n\n")}
 
 ## Services
 ${profile.services.map((s) => `- ${s}`).join("\n")}

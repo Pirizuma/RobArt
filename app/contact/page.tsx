@@ -4,6 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { HeroMeshGradient } from "@/components/HeroMeshGradient";
 import { exhibitionMode, openGraphBase } from "@/lib/site";
 import { profile } from "@/lib/profile";
+import { noWidow } from "@/lib/text";
 
 const contactDescription =
   "Get in touch with Robert Mariotti about commissions, enquiries and collaborations. Based in Darwin, NT — taking commissions across Australia and overseas.";
@@ -67,15 +68,14 @@ export default function InformationPage() {
         {/* Details + blurb */}
         <div className="border border-stone-200 rounded-3xl p-[clamp(2rem,3.5vw,2.5rem)]">
           <h2 className="text-xl font-medium text-stone-900 tracking-tight">
-            Robert Mariotti
+            {profile.name}
           </h2>
-          <p className="mt-3 text-stone-600 leading-relaxed text-sm sm:text-base">
-            Robert Mariotti is a Darwin-based sculptor and artist with over 40
-            years&rsquo; experience specialising in model making, dioramas and
-            fibreglass sculpture. He welcomes enquiries and commissions from
-            across Australia and overseas, so if you have a piece in mind, get
-            in&nbsp;touch.
-          </p>
+          <p className="mt-1 text-sm text-stone-500">{profile.headline}</p>
+          <div className="mt-4 space-y-3 text-stone-600 leading-relaxed text-sm sm:text-base">
+            {profile.about.map((para) => (
+              <p key={para.slice(0, 24)}>{noWidow(para)}</p>
+            ))}
+          </div>
 
           <dl className="mt-8 space-y-5">
             {detailItems.map((item) => (

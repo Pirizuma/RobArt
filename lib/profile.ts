@@ -8,7 +8,29 @@ export const profile = {
   name: "Robert Mariotti",
   studio: "RobArt Studio",
   role: "Sculptor and model maker",
-  location: { city: "Darwin", region: "NT", country: "AU" },
+  headline: "Australian-Italian Sculptor & Artist",
+  // Bio shown on the contact page and in /llms.txt (one string per paragraph).
+  about: [
+    "Robert Mariotti is an Australian-Italian contemporary sculptor and artist based in Darwin, Australia. With over 40 years of creative and technical experience, his practice spans sculpture, model making, dioramas and bespoke three-dimensional artworks.",
+    "Working across fibreglass, timber, metal, recycled materials and found objects, Robert takes an experimental and material-led approach to creating sculptural works. He combines traditional craftsmanship with unconventional fabrication techniques, often transforming discarded, overlooked or repurposed materials into distinctive artworks.",
+    "Robert undertakes independent projects and commissioned work, adapting his approach to the individual concept, scale, materials and requirements of each project. His versatility across materials and mediums allows him to work across a broad range of artistic, creative and practical applications.",
+  ],
+  // Structured data (schema.org Person).
+  jobTitles: ["Sculptor", "Contemporary Artist", "Model Maker"],
+  personDescription:
+    "Australian-Italian contemporary sculptor and artist based in Darwin, Northern Territory, Australia, with over 40 years of experience in sculpture, model making, dioramas and fibreglass fabrication.",
+  knowsAbout: [
+    "Contemporary sculpture",
+    "Fibreglass sculpture",
+    "Model making",
+    "Diorama construction",
+    "Wood sculpture",
+    "Metal sculpture",
+    "Recycled materials",
+    "Found object art",
+    "Sculptural fabrication",
+  ],
+  location: { city: "Darwin", region: "Northern Territory", country: "AU" },
   locationLabel: "Darwin, Northern Territory, Australia",
   serviceArea: "across Australia and overseas",
   experience: "over 40 years",

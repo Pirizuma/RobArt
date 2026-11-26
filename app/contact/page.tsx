@@ -66,7 +66,7 @@ export default function InformationPage() {
       </header>
 
       {/* Row 1 — contact details + contact form (leads) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         {/* Details + blurb */}
         <div className="border border-stone-200 rounded-3xl p-[clamp(1.5rem,3.5vw,2.5rem)]">
           <h2 className="text-xl font-medium text-stone-900 tracking-tight">
@@ -116,7 +116,7 @@ export default function InformationPage() {
       </div>
 
       {/* Row 2 — image placeholder + companies/initiatives worked with */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         <PhotoTile />
         <div className="border border-stone-200 rounded-3xl p-[clamp(1.5rem,3.5vw,2.5rem)]">
           <p className="text-stone-600 leading-relaxed text-sm sm:text-base">

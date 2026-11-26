@@ -64,15 +64,15 @@ export default function HomePage() {
         <div data-tile="hero-bg" aria-hidden className="absolute inset-0">
           <HeroMeshGradient />
         </div>
-        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2">
 
           {/* Portrait half — left on desktop, top on mobile.
               aspect-[4/5] gives it a height on mobile (where it's alone in
-              its own row); on sm:+ it instead matches whatever height the
+              its own row; square from 640px); on md:+ it instead matches whatever height the
               bio card actually needs, so the two halves always line up
               even when the bio text wraps to more lines than usual. */}
-          <div data-tile="hero-portrait" className="relative aspect-[4/5] sm:aspect-auto sm:h-full">
-            <div className="absolute inset-[clamp(2rem,7vw,5rem)] rounded-2xl overflow-hidden shadow-sm">
+          <div data-tile="hero-portrait" className="relative aspect-[4/5] sm:aspect-square md:aspect-auto md:h-full">
+            <div className="absolute inset-[clamp(2rem,7vw,5rem)] md:right-[clamp(0.75rem,2vw,1.25rem)] lg:right-[clamp(2rem,7vw,5rem)] rounded-2xl overflow-hidden shadow-sm">
               <Image
                 src="/images/site/portrait.jpg"
                 alt="Robert Mariotti"
@@ -93,9 +93,9 @@ export default function HomePage() {
               width, so the two halves still look matched in the common
               case, but the bio card is free to grow taller when the text
               wraps to more lines than that — it no longer clips. */}
-          <div data-tile="hero-bio" className="relative -mt-8 sm:mt-0">
+          <div data-tile="hero-bio" className="relative -mt-8 md:mt-0">
             <div
-              className="relative m-[clamp(2rem,7vw,5rem)] min-h-[clamp(260px,38vw,490px)] flex flex-col justify-center"
+              className="relative m-[clamp(2rem,7vw,5rem)] md:ml-[clamp(0.75rem,2vw,1.25rem)] lg:ml-[clamp(2rem,7vw,5rem)] min-h-[clamp(260px,38vw,490px)] flex flex-col justify-center"
               style={{ borderRadius: "20px", overflow: "hidden" }}
             >
               <div style={{
@@ -121,8 +121,7 @@ export default function HomePage() {
                 <p className="mt-4 text-stone-700 leading-relaxed text-sm sm:text-base">
                   Robert Mariotti is an Australian-Italian sculptor and artist
                   based in Darwin, with over 40 years of experience in model
-                  making, dioramas, and fibreglass and kinetic sculpture. He
-                  takes on commissions across Australia and&nbsp;overseas.
+                  making, dioramas, and fibreglass and kinetic&nbsp;sculpture.
                 </p>
                 <LiquidGlassButton href="/contact" className="mt-6 sm:mt-8 self-start">
                   Get in touch →

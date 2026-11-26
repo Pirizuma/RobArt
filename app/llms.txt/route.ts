@@ -1,4 +1,5 @@
 import { profile } from "@/lib/profile";
+import { projects, hasPage } from "@/lib/projects";
 import { siteDescription, siteName, siteUrl } from "@/lib/site";
 
 // /llms.txt — a plain-text summary of the site for AI assistants
@@ -27,8 +28,12 @@ ${profile.services.map((s) => `- ${s}`).join("\n")}
 ## Has worked with
 ${profile.workedWith.map((w) => `- ${w}`).join("\n")}
 
-## Featured work
-- Refractory Period (2026) — current exhibition piece
+## Works
+- Refractory Period — current exhibition piece
+${projects
+  .filter(hasPage)
+  .map((p) => `- [${p.title}](${siteUrl}/project/${p.id}) — ${p.summary ?? ""}`)
+  .join("\n")}
 
 ## Contact
 ${contactLines.join("\n")}

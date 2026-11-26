@@ -37,7 +37,11 @@ export const openGraphBase = {
 // (https://formspree.io/f/<id>). Not a secret: it's sent with every submission.
 export const formspreeFormId = "xaeoozll";
 
-// Exhibition (MVP) mode: tiles open a swipeable image modal instead of
-// linking to project pages, and project pages aren't built. Set to false
-// to restore the full site once titles/descriptions are ready.
-export const exhibitionMode = true;
+// Works with written content (a summary/description in lib/projects.ts) get
+// their own page; the rest open straight into the image viewer from the
+// homepage. See hasPage() in lib/projects.ts.
+
+// Dates and prices are kept in lib/projects.ts but hidden for now.
+// Flip these to show them again.
+export const showDates = false;
+export const showPrices = false;

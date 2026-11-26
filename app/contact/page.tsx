@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
 import { HeroMeshGradient } from "@/components/HeroMeshGradient";
-import { exhibitionMode, openGraphBase } from "@/lib/site";
+import { openGraphBase } from "@/lib/site";
 import { profile } from "@/lib/profile";
 import { BioText } from "@/components/BioText";
 
@@ -45,8 +45,10 @@ const detailItems: DetailItem[] = [
     value: profile.email,
     href: `mailto:${profile.email}`,
   },
-  // Phone is hidden in exhibition mode; it returns with the full site.
-  ...(exhibitionMode ? [] : [{ label: "Phone", value: "[+00 000 000 000]" }]),
+  // Phone appears once it's set in lib/profile.ts.
+  ...(profile.phone
+    ? [{ label: "Phone", value: profile.phone, href: `tel:${profile.phone.replace(/\s/g, "")}` }]
+    : []),
   {
     label: "Studio",
     value:

@@ -35,7 +35,7 @@ const layout: Row[] = [
     cols: "grid-cols-1 sm:grid-cols-2",
     tiles: [
       { id: "womb", aspect: "portrait", pad: "lg" },
-      { id: "octo", aspect: "portrait", pad: "lg" },
+      { id: "his-masters-voice", aspect: "portrait", pad: "lg" },
     ],
   },
   // Six small tiles in one grid: 3 rows of 2 on mobile, 2 rows of 3 on sm:+.
@@ -45,10 +45,10 @@ const layout: Row[] = [
     gap: "gap-x-6 gap-y-8 sm:gap-x-8 sm:gap-y-10",
     tiles: [
       { id: "white-chiave", aspect: "square", pad: "sm" },
-      { id: "sun-chair", aspect: "square", pad: "sm" },
-      { id: "mirror", aspect: "square", pad: "sm" },
-      { id: "chair-jacket", aspect: "square", pad: "sm" },
-      { id: "sardine", aspect: "square", pad: "sm" },
+      { id: "unwhistled-hero", aspect: "square", pad: "sm" },
+      { id: "scatologique-and-eschatologique", aspect: "square", pad: "sm" },
+      { id: "merv-the-perv", aspect: "square", pad: "sm" },
+      { id: "once-upon-a-time", aspect: "square", pad: "sm" },
       { id: "other-works", aspect: "square", pad: "sm" },
     ],
   },

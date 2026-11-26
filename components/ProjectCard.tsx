@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/lib/types";
 import { Lightbox } from "@/components/Lightbox";
-import { exhibitionMode } from "@/lib/site";
+import { showDates } from "@/lib/site";
+import { hasPage } from "@/lib/projects";
 import { imagePlaceholders } from "@/lib/imagePlaceholders";
 import { preloadViewerImages } from "@/lib/preloadViewerImages";
 
@@ -68,15 +69,17 @@ export function ProjectCard({
           <h2 className="font-light text-stone-900 text-base group-hover:text-stone-500 transition-colors">
             {project.title}
           </h2>
-          <p className="text-stone-500 text-sm mt-0.5">{project.year}</p>
+          {showDates && project.year && (
+            <p className="text-stone-500 text-sm mt-0.5">{project.year}</p>
+          )}
         </div>
       </div>
     </article>
   );
 
-  // Exhibition mode: the tile opens a swipeable modal of the project's
-  // images instead of linking to its (not yet written) project page.
-  if (exhibitionMode) {
+  // Works without a page yet (no written content) open straight into the
+  // image viewer; works with one link through to it.
+  if (!hasPage(project)) {
     return (
       <>
         <div className="group relative">

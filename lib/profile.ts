@@ -37,9 +37,17 @@ export const profile = {
   specialisms: ["Model making", "Dioramas", "Fibreglass sculpture", "Sculpture"],
   services: [
     "Commissioned sculpture",
+    "2D & 3D project design",
+    "Polyurethane and fibreglass fabrication",
     "Model making",
     "Dioramas",
-    "Fibreglass sculpture and fabrication",
+    "Scenography",
+    "Mannequins",
+    "Layouts",
+    "Trompe-l’œil",
+    "Mosaics",
+    "Heraldic and architectural elements",
+    "Bas-relief",
   ],
   workedWith: ["Nitmiluk Visitor Centre", "Darwin Italian Festival"],
   // Fill these in when confirmed — they're also published in the

@@ -1,23 +1,12 @@
 import type { Project } from "./types";
 
-// Placeholder content until Bob supplies the real titles, dates, materials
-// and descriptions for each piece.
-const TITLE_TBC = "Bob Title TBC";
-const YEAR_TBC = 1995;
-const MATERIALS_TBC = [
-  "Fibreglass resin, recycled general household materials… Bob to fill TBC",
-];
-const DESCRIPTION_TBC =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-
 export const projects: Project[] = [
   {
     // Current exhibition piece — leads the homepage.
     id: "refractory-period",
     title: "Refractory Period",
+    // Not shown yet (see showDates / showPrices in lib/site.ts).
     year: 2026,
-    materials: MATERIALS_TBC,
-    description: DESCRIPTION_TBC,
     thumbnailImage: "/images/refractory-period/refractory-period-01.jpg",
     images: [
       "/images/refractory-period/refractory-period-01.jpg",
@@ -37,10 +26,7 @@ export const projects: Project[] = [
   },
   {
     id: "womb",
-    title: TITLE_TBC,
-    year: YEAR_TBC,
-    materials: MATERIALS_TBC,
-    description: DESCRIPTION_TBC,
+    title: "Bob Title TBC",
     thumbnailImage: "/images/womb/womb-01.jpg",
     images: [
       "/images/womb/womb-01.jpg",
@@ -54,10 +40,7 @@ export const projects: Project[] = [
   },
   {
     id: "white-chiave",
-    title: TITLE_TBC,
-    year: YEAR_TBC,
-    materials: MATERIALS_TBC,
-    description: DESCRIPTION_TBC,
+    title: "Bob Title TBC",
     thumbnailImage: "/images/white-chiave/white-chiave-01.jpg",
     images: [
       "/images/white-chiave/white-chiave-01.jpg",
@@ -70,11 +53,13 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "mirror",
-    title: TITLE_TBC,
-    year: YEAR_TBC,
-    materials: MATERIALS_TBC,
-    description: DESCRIPTION_TBC,
+    id: "scatologique-and-eschatologique",
+    title: "Scatologique & Eschatologique",
+    summary: "Metamorphosis of a deck chair towards something ambivalent in the theatrical world of sound and vision.",
+    // Not shown yet (see showDates / showPrices in lib/site.ts).
+    year: 2007,
+    exhibited: "DVAA Arts Exhibition, 2007",
+    price: "$1,850",
     thumbnailImage: "/images/mirror/mirror-01.jpg",
     images: [
       "/images/mirror/mirror-01.jpg",
@@ -85,11 +70,13 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "chair-jacket",
-    title: TITLE_TBC,
-    year: YEAR_TBC,
-    materials: MATERIALS_TBC,
-    description: DESCRIPTION_TBC,
+    id: "merv-the-perv",
+    title: "Merv the Perv",
+    summary: "Metamorphosis of a deck chair into a rather odd, magus-like character. Projection of human characteristics into an inanimate creature.",
+    // Not shown yet (see showDates / showPrices in lib/site.ts).
+    year: 2007,
+    exhibited: "DVAA Arts Exhibition, 2007",
+    price: "$1,850",
     thumbnailImage: "/images/chair-jacket/chair-jacket-01.jpg",
     images: [
       "/images/chair-jacket/chair-jacket-01.jpg",
@@ -99,11 +86,17 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "octo",
-    title: TITLE_TBC,
-    year: YEAR_TBC,
-    materials: MATERIALS_TBC,
-    description: DESCRIPTION_TBC,
+    id: "his-masters-voice",
+    title: "His Master’s Voice",
+    summary: "A “quasi” natural history specimen which has undertaken a metamorphosis adaptation from a deck chair into an inanimate creature and wave.",
+    description: [
+      "His Master’s Voice is based upon the theme Laudatur Temporis Acti, which means “Let’s thank the action of time”. The artwork represents the transformation of an iconic symbol within Australian culture, the deck chair, and the sea. The transformation of these two elements, through the action of time, undertakes a metamorphosis as the artist blends the many and varied attributes of the sea into the design of the deck chair.",
+      "The piece is influenced through his life living in Darwin. The deck chair relates to his interpretation of Darwin’s “laid back” lifestyle. In addition, the integration of Charles Darwin’s theory of the evolution of species by natural selection is depicted in his piece. The artist uses a process by which the desirable elements of the sea and deck chair are systematically selected for reproduction.",
+    ],
+    // Not shown yet (see showDates / showPrices in lib/site.ts).
+    year: 2007,
+    exhibited: "DVAA Arts Exhibition, 2007",
+    price: "$1,850",
     thumbnailImage: "/images/octo/octo-01.jpg",
     images: [
       "/images/octo/octo-01.jpg",
@@ -118,11 +111,26 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "sardine",
-    title: TITLE_TBC,
-    year: YEAR_TBC,
-    materials: MATERIALS_TBC,
-    description: DESCRIPTION_TBC,
+    id: "once-upon-a-time",
+    title: "Once Upon A Time",
+    summary: "Metamorphosis of a deck chair into a sardine can, as a result of an unnatural reaction. The evolution of a mar-attendant figure is the resultant of an accident that altered the correct course of this unique metamorphosis.",
+    description: [
+      "Robert’s artwork represents the transformation of an iconic symbol within Australian culture, the deck chair, and the sea.",
+      "Robert’s artwork is largely influenced through his life living in Darwin. The deck chair relates to his interpretation of Darwin’s “laid back” lifestyle. In addition, the integration of Charles Darwin’s theory of the evolution of species by natural selection is depicted in his pieces.",
+    ],
+    materials: [
+      "Polyurethane",
+      "Fibreglass",
+    ],
+    dimensions: "260 × 122 × 105 cm",
+    weight: "Approx. 80 kg",
+    notes: [
+      "Mechanically power driven — requires a power outlet",
+    ],
+    // Not shown yet (see showDates / showPrices in lib/site.ts).
+    year: 2007,
+    exhibited: "DVAA Arts Exhibition, 2007",
+    price: "$1,850",
     thumbnailImage: "/images/sardine/sardine-01.jpg",
     images: [
       "/images/sardine/sardine-01.jpg",
@@ -150,11 +158,13 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "sun-chair",
-    title: TITLE_TBC,
-    year: YEAR_TBC,
-    materials: MATERIALS_TBC,
-    description: DESCRIPTION_TBC,
+    id: "unwhistled-hero",
+    title: "Unwhistled Hero",
+    summary: "Change of status from a deck chair to a composite of an Australian icon.",
+    // Not shown yet (see showDates / showPrices in lib/site.ts).
+    year: 2007,
+    exhibited: "DVAA Arts Exhibition, 2007",
+    price: "$1,850",
     thumbnailImage: "/images/sun-chair/sun-chair-01.jpg",
     images: [
       "/images/sun-chair/sun-chair-01.jpg",
@@ -178,9 +188,6 @@ export const projects: Project[] = [
     // one-off works to this images list as they come up.
     id: "other-works",
     title: "Other Works",
-    year: YEAR_TBC,
-    materials: MATERIALS_TBC,
-    description: DESCRIPTION_TBC,
     thumbnailImage: "/images/other-works/guinness.jpg",
     images: [
       "/images/other-works/guinness.jpg",
@@ -198,6 +205,12 @@ export function getProjectById(id: string): Project | undefined {
   return projects.find((p) => p.id === id);
 }
 
+/** A work gets its own page once it has real written content. */
+export function hasPage(p: Project): boolean {
+  return Boolean(p.summary || p.description?.length);
+}
+
+/** Ids of the works that have their own page. */
 export function getAllProjectIds(): string[] {
-  return projects.map((p) => p.id);
+  return projects.filter(hasPage).map((p) => p.id);
 }

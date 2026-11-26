@@ -3,14 +3,13 @@ import { notFound } from "next/navigation";
 import { getAllProjectIds, getProjectById } from "@/lib/projects";
 import { imageSizes } from "@/lib/imageSizes";
 import { ProjectView } from "@/components/ProjectView";
-import { exhibitionMode, openGraphBase } from "@/lib/site";
+import { openGraphBase } from "@/lib/site";
 
 type Props = { params: Promise<{ id: string }> };
 
 // Pre-render every project page at build time (fast, and crawlable).
-// In exhibition mode no project pages are built, so /project/* 404s.
+// Only works with written content get a page (see hasPage in lib/projects.ts).
 export function generateStaticParams() {
-  if (exhibitionMode) return [];
   return getAllProjectIds().map((id) => ({ id }));
 }
 
@@ -26,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProjectById((await params).id);
   if (!project) return {};
 
-  const description = summarise(project.description);
+  const description = summarise(project.summary ?? project.description?.join(" ") ?? "");
   const dims = imageSizes[project.thumbnailImage];
   const image = {
     url: project.thumbnailImage,

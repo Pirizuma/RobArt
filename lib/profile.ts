@@ -6,7 +6,7 @@
 
 export const profile = {
   name: "Robert Mariotti",
-  studio: "RobArt Studio",
+  studio: "robArt Studio",
   role: "Sculptor and model maker",
   headline: "Australian-Italian Sculptor & Artist",
   // Bio shown on the contact page and in /llms.txt (one string per paragraph).

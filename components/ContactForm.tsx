@@ -76,7 +76,7 @@ export function ContactForm() {
     // Column flex: the message box grows to fill any spare height, so the
     // form tile ends level with the tile beside it.
     <form onSubmit={handleSubmit} className="flex flex-1 flex-col gap-4">
-      <input type="hidden" name="_subject" value="New enquiry from the RobArt Studio website" />
+      <input type="hidden" name="_subject" value="New enquiry from the robArt Studio website" />
       {/* Honeypot: hidden from people, filled in by bots — Formspree discards those. */}
       <input
         type="text"

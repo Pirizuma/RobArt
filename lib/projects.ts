@@ -79,9 +79,9 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "merv-the-perv",
+    id: "merv",
     series: "laudatur-temporis-acti",
-    title: "Merv the Perv",
+    title: "Merv the P*rv",
     summary: "Metamorphosis of a deck chair into a rather odd, magus-like character. Projection of human characteristics into an inanimate creature.",
     // Not shown yet (see showDates / showPrices in lib/site.ts).
     year: 2007,

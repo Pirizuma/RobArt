@@ -10,7 +10,7 @@ export const siteUrl =
     ? "https://robartstudio.com"
     : "http://localhost:3000");
 
-export const siteName = "RobArt Studio by Robert Mariotti";
+export const siteName = "robArt Studio by Robert Mariotti";
 
 export const siteDescription =
   "Robert Mariotti is a Darwin-based sculptor and artist with over 40 years of experience in model making, dioramas and fibreglass sculpture. Commissions taken across Australia and overseas.";

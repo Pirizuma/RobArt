@@ -9,7 +9,7 @@ export function Header() {
           className="inline-block whitespace-nowrap py-2 -my-2 hover:opacity-75 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 rounded-md"
         >
           <span className="text-base sm:text-xl font-medium tracking-tight text-[#1a1a1a]">
-            RobArt Studio
+            robArt Studio
           </span>
           <span className="text-base sm:text-xl font-light tracking-tight text-[#737373] ml-1.5">
             by Robert Mariotti

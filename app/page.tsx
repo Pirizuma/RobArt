@@ -47,7 +47,7 @@ const layout: Row[] = [
       { id: "white-chiave", aspect: "square", pad: "sm" },
       { id: "unwhistled-hero", aspect: "square", pad: "sm" },
       { id: "scatologique-and-eschatologique", aspect: "square", pad: "sm" },
-      { id: "merv-the-perv", aspect: "square", pad: "sm" },
+      { id: "merv", aspect: "square", pad: "sm" },
       { id: "once-upon-a-time", aspect: "square", pad: "sm" },
       { id: "other-works", aspect: "square", pad: "sm" },
     ],

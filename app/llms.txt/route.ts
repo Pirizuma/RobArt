@@ -1,5 +1,6 @@
 import { profile } from "@/lib/profile";
 import { projects, hasPage } from "@/lib/projects";
+import { series as allSeries } from "@/lib/series";
 import { siteDescription, siteName, siteUrl } from "@/lib/site";
 
 // /llms.txt — a plain-text summary of the site for AI assistants
@@ -29,11 +30,17 @@ ${profile.services.map((s) => `- ${s}`).join("\n")}
 ${profile.workedWith.map((w) => `- ${w}`).join("\n")}
 
 ## Works
-- Refractory Period — current exhibition piece
 ${projects
   .filter(hasPage)
   .map((p) => `- [${p.title}](${siteUrl}/project/${p.id}) — ${p.summary ?? ""}`)
   .join("\n")}
+
+Refractory Period is Robert's current exhibition piece.
+
+## Series
+${Object.values(allSeries)
+  .map((s) => `### ${s.name}${s.meaning ? ` (“${s.meaning}”)` : ""}\n${s.text}\nWorks: ${projects.filter((p) => p.series && allSeries[p.series] === s).map((p) => p.title).join(", ")}`)
+  .join("\n\n")}
 
 ## Contact
 ${contactLines.join("\n")}

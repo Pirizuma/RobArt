@@ -11,6 +11,8 @@ export type Project = {
   weight?: string;
   /** Extra practical notes, e.g. "Requires a power outlet". */
   notes?: string[];
+  /** Key into lib/series.ts, for works that belong to a series. */
+  series?: string;
   thumbnailImage: string;
   images: string[];
 

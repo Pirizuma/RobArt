@@ -5,6 +5,14 @@ export const projects: Project[] = [
     // Current exhibition piece — leads the homepage.
     id: "refractory-period",
     title: "Refractory Period",
+    summary:
+      "Within a fragile glass vessel, two dogs remain joined in an unlikely and seemingly inseparable union — a sculpture on the tension between intimacy and conflict, made in response to the exhibition theme (IN)FINITE.",
+    description: [
+      "Within a fragile glass vessel, two dogs remain joined in an unlikely and seemingly inseparable union. Adorned with spiked collars, they project strength and defiance, yet their entanglement suggests dependence and vulnerability. Their connection reflects the tension between intimacy and conflict, attraction and aggression, where opposing forces coexist.",
+      "Beyond the vessel, immense walls of water appear to part, evoking biblical imagery and the historical significance of strategic waterways. Water becomes a symbol of division and passage, separating territories while connecting distant worlds. The bottle carries its silent message through these opposing forces.",
+      "The title, Refractory Period, draws upon human physiology, describing a temporary period of recovery following copulatory activity. Here, it becomes a metaphor for the fragile pause between confrontations, where tensions subside before inevitably resurfacing.",
+      "Responding to the exhibition theme (IN)FINITE, the sculpture explores the cyclical nature of human behaviour, relationships and history. Like waves that rise, fall and return, moments of desire, conflict and reconciliation form an enduring rhythm.",
+    ],
     // Not shown yet (see showDates / showPrices in lib/site.ts).
     year: 2026,
     thumbnailImage: "/images/refractory-period/refractory-period-01.jpg",
@@ -54,6 +62,7 @@ export const projects: Project[] = [
   },
   {
     id: "scatologique-and-eschatologique",
+    series: "laudatur-temporis-acti",
     title: "Scatologique & Eschatologique",
     summary: "Metamorphosis of a deck chair towards something ambivalent in the theatrical world of sound and vision.",
     // Not shown yet (see showDates / showPrices in lib/site.ts).
@@ -71,6 +80,7 @@ export const projects: Project[] = [
   },
   {
     id: "merv-the-perv",
+    series: "laudatur-temporis-acti",
     title: "Merv the Perv",
     summary: "Metamorphosis of a deck chair into a rather odd, magus-like character. Projection of human characteristics into an inanimate creature.",
     // Not shown yet (see showDates / showPrices in lib/site.ts).
@@ -87,6 +97,7 @@ export const projects: Project[] = [
   },
   {
     id: "his-masters-voice",
+    series: "laudatur-temporis-acti",
     title: "His Master’s Voice",
     summary: "A “quasi” natural history specimen which has undertaken a metamorphosis adaptation from a deck chair into an inanimate creature and wave.",
     description: [
@@ -112,6 +123,7 @@ export const projects: Project[] = [
   },
   {
     id: "once-upon-a-time",
+    series: "laudatur-temporis-acti",
     title: "Once Upon A Time",
     summary: "Metamorphosis of a deck chair into a sardine can, as a result of an unnatural reaction. The evolution of a mar-attendant figure is the resultant of an accident that altered the correct course of this unique metamorphosis.",
     description: [
@@ -159,6 +171,7 @@ export const projects: Project[] = [
   },
   {
     id: "unwhistled-hero",
+    series: "laudatur-temporis-acti",
     title: "Unwhistled Hero",
     summary: "Change of status from a deck chair to a composite of an Australian icon.",
     // Not shown yet (see showDates / showPrices in lib/site.ts).

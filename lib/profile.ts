@@ -21,6 +21,7 @@ export const profile = {
     "Australian-Italian contemporary sculptor and artist based in Darwin, Northern Territory, Australia, with over 40 years of experience in sculpture, model making, dioramas and fibreglass fabrication.",
   knowsAbout: [
     "Contemporary sculpture",
+    "Kinetic sculpture",
     "Fibreglass sculpture",
     "Model making",
     "Diorama construction",

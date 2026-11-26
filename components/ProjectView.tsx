@@ -9,6 +9,7 @@ import { preloadViewerImages } from "@/lib/preloadViewerImages";
 import { Lightbox } from "@/components/Lightbox";
 import { showDates, showPrices } from "@/lib/site";
 import { noWidow } from "@/lib/text";
+import { series as allSeries } from "@/lib/series";
 import type { Project } from "@/lib/types";
 
 /**
@@ -19,8 +20,14 @@ import type { Project } from "@/lib/types";
 export function ProjectView({ project }: { project: Project }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const total = project.images.length;
+  const series = project.series ? allSeries[project.series] : undefined;
+  // Skip the lead line if the first paragraph already opens with it.
+  const showLead =
+    project.summary &&
+    !project.description?.[0]?.startsWith(project.summary.slice(0, 40));
 
   const details = [
+    series && { label: "Series", value: series.name },
     project.materials?.length && { label: "Materials", value: project.materials.join(", ") },
     project.dimensions && { label: "Dimensions", value: project.dimensions },
     project.weight && { label: "Weight", value: project.weight },
@@ -43,7 +50,7 @@ export function ProjectView({ project }: { project: Project }) {
             {project.title}
           </h1>
 
-          {project.summary && (
+          {showLead && project.summary && (
             <p className="mt-4 text-lg sm:text-xl font-light text-stone-700 leading-relaxed">
               {noWidow(project.summary)}
             </p>
@@ -73,6 +80,21 @@ export function ProjectView({ project }: { project: Project }) {
           )}
         </header>
 
+        {/* Series context — only where the work's own text doesn't
+            already cover it. */}
+        {series && !project.description?.some((p) => p.includes(series.name)) && (
+          <section className="max-w-3xl mt-10 border-t border-stone-200 pt-8" aria-labelledby="series-heading">
+            <h2 id="series-heading" className="text-xs uppercase tracking-wider text-stone-500">
+              About the series
+            </h2>
+            <p className="mt-3 text-stone-900">
+              <span className="italic">{series.name}</span>
+              {series.meaning && <span className="text-stone-500"> — “{series.meaning}”</span>}
+            </p>
+            <p className="mt-3 text-stone-600 leading-relaxed">{noWidow(series.text)}</p>
+          </section>
+        )}
+
         {/* Masonry gallery: photos keep their natural proportions and flow
             into the shortest column (1 → 2 → 3 columns as the screen widens). */}
         <div className="mt-10 sm:mt-14 columns-1 sm:columns-2 lg:columns-3 gap-3 sm:gap-4">
@@ -86,12 +108,11 @@ export function ProjectView({ project }: { project: Project }) {
                 onClick={() => setLightboxIndex(idx)}
                 onPointerEnter={() => preloadViewerImages(project.images.slice(idx), 1)}
                 onFocus={() => preloadViewerImages(project.images.slice(idx), 1)}
-                aria-label={`View ${project.title}, image ${idx + 1} of ${total}`}
                 className="group mb-3 sm:mb-4 block w-full break-inside-avoid overflow-hidden rounded-2xl bg-stone-100 shadow-sm cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2"
               >
                 <Image
                   src={src}
-                  alt=""
+                  alt={`${project.title}, sculpture by Robert Mariotti — photo ${idx + 1} of ${total}`}
                   width={dims ? dims[0] : 1200}
                   height={dims ? dims[1] : 1200}
                   priority={idx < 2}
